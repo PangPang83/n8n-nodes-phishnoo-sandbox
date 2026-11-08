@@ -1,0 +1,18 @@
+{
+  "name": "n8n-nodes-phishnoo-sandbox",
+  "version": "0.1.1",
+  "description": "Read synthetic security awareness scores and submit example threat reports",
+  "homepage": "https://phishnoo.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PangPang83/n8n-nodes-phishnoo-sandbox.git"
+  },
+  "author": "Pieter",
+  "keywords": ["n8n-community-node-package"],
+  "files": ["nodes", "credentials", "README.md"],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": ["credentials/PhishnooSandboxApi.credentials.js"],
+    "nodes": ["nodes/PhishnooSandbox.node.js"]
+  }
+}

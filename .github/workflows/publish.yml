@@ -1,0 +1,22 @@
+name: Publish n8n node
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+      - run: npm install --global npm@11.15.0
+      - run: node --check nodes/PhishnooSandbox.node.js
+      - run: node --check credentials/PhishnooSandboxApi.credentials.js
+      - run: npm publish --access public --provenance --ignore-scripts
